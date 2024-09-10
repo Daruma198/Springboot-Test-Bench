@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Transaction Email Template</title>
+</head>
+<body>
+    <p>PT Bank OGYA</p>
+    <p>Hi, <span th:text="${sourceAccountName}"></span></p>
+    <p>
+        Anda telah melakukan transaksi pada tanggal
+        <span th:text="${currentTime1}"></span> ini adalah
+        informasi transaksi yang telah Anda lakukan:
+    </p>
+    <p>Rekening Tujuan&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;: <b th:text="${targetAccountNo}"></b></p>
+    <p th:if="${!#strings.isEmpty(targetAccountName)}">Nama Pemilik Rekening Tujuan&emsp;: <b th:text="${targetAccountName}"></b></p>
+    <p>Tanggal/ Jam&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: <span th:text="${currentTime2}"></span></p>
+    <p>Jumlah Transfer&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: <b th:text="${currency}"></b>&nbsp;<b th:text="${amount}"></b></p>
+    <p>Status&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;: <b th:text="${status}"></b></p>
+    <p>Reference No. &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: <b th:text="${referenceNo}"></b></p>
+    <p>Mohon periksa kemabli mutasi rekening Anda</p>
+    <br />
+    <p>PT Bank OGYA</p>
+</body>
+</html>
